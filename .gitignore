@@ -1,0 +1,13 @@
+.DS_Store
+.idea/
+.vscode/
+
+# выгрузки и рабочие копии данных
+exports/
+*.bson
+*.archive
+dump/
+
+# локальные переменные окружения
+.env
+.env.local
