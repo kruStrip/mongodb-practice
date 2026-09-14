@@ -95,6 +95,8 @@ lesson_02/              занятие 2: embedding и referencing, ADR-002, з�
   queries.mongodb.js    три счёта: чтение, отчёт, правка
   grow.mongodb.js       предел документа: доводим массив до отказа
   scale.mongodb.js      большая база: 20 000 резюме и 5 000 компаний
+practice01/             ПР-01 справочника: каталог товаров, витрина и правки
+  solution.py           catalog_page и приёмка поставки, python3 solution.py
 docs/git/               разбор git в VS Code со скриншотами
 ```
 
@@ -104,6 +106,12 @@ docs/git/               разбор git в VS Code со скриншотами
 
 Что сдавать и что проверяется — в `README.md` внутри папки занятия. Там же
 чек-лист, который проходят перед Pull Request.
+
+Практические работы справочника лежат отдельными папками `practiceNN`.
+Данные для них живут в учебном репозитории
+[MaximBytecamp/mongodb-practice](https://github.com/MaximBytecamp/mongodb-practice):
+его клонируют рядом с этим репозиторием, а сервер поднимает `stend/` отсюда.
+Как запускать и какие числа получились — в [`practice01/README.md`](practice01/README.md).
 
 ## Как сдавать
 
