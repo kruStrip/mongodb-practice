@@ -3,28 +3,14 @@
   "queryPlanner": {
     "namespace": "logs.events",
     "parsedQuery": {
-      "$and": [
-        {
-          "level": {
-            "$eq": "error"
-          }
-        },
-        {
-          "service": {
-            "$eq": "payments"
-          }
-        },
-        {
-          "duration_ms": {
-            "$gt": 500
-          }
-        }
-      ]
+      "level": {
+        "$eq": "error"
+      }
     },
     "indexFilterSet": false,
-    "queryHash": "E0A76989",
-    "planCacheShapeHash": "E0A76989",
-    "planCacheKey": "CBAAE442",
+    "queryHash": "513EADDC",
+    "planCacheShapeHash": "513EADDC",
+    "planCacheKey": "A4FE9AFE",
     "optimizationTimeMillis": 0,
     "maxIndexedOrSolutionsReached": false,
     "maxIndexedAndSolutionsReached": false,
@@ -34,30 +20,17 @@
       "isCached": false,
       "stage": "SORT",
       "sortPattern": {
-        "ts": -1
+        "duration_ms": -1
       },
       "memLimit": 104857600,
+      "limitAmount": 10,
       "type": "simple",
       "inputStage": {
         "stage": "COLLSCAN",
         "filter": {
-          "$and": [
-            {
-              "level": {
-                "$eq": "error"
-              }
-            },
-            {
-              "service": {
-                "$eq": "payments"
-              }
-            },
-            {
-              "duration_ms": {
-                "$gt": 500
-              }
-            }
-          ]
+          "level": {
+            "$eq": "error"
+          }
         },
         "nss": "logs.events",
         "direction": "forward"
@@ -67,60 +40,47 @@
   },
   "executionStats": {
     "executionSuccess": true,
-    "nReturned": 33,
+    "nReturned": 10,
     "executionTimeMillis": 0,
     "totalKeysExamined": 0,
     "totalDocsExamined": 1200,
     "executionStages": {
       "isCached": false,
       "stage": "SORT",
-      "nReturned": 33,
+      "nReturned": 10,
       "executionTimeMillisEstimate": 0,
-      "works": 1235,
-      "advanced": 33,
+      "works": 1212,
+      "advanced": 10,
       "needTime": 1201,
       "needYield": 0,
       "saveState": 0,
       "restoreState": 0,
       "isEOF": 1,
       "sortPattern": {
-        "ts": -1
+        "duration_ms": -1
       },
       "memLimit": 104857600,
+      "limitAmount": 10,
       "type": "simple",
-      "totalDataSizeSorted": 9181,
+      "totalDataSizeSorted": 2823,
       "usedDisk": false,
       "spills": 0,
       "spilledRecords": 0,
       "spilledBytes": 0,
       "spilledDataStorageSize": 0,
-      "peakTrackedMemBytes": 9181,
+      "peakTrackedMemBytes": 2823,
       "inputStage": {
         "stage": "COLLSCAN",
         "filter": {
-          "$and": [
-            {
-              "level": {
-                "$eq": "error"
-              }
-            },
-            {
-              "service": {
-                "$eq": "payments"
-              }
-            },
-            {
-              "duration_ms": {
-                "$gt": 500
-              }
-            }
-          ]
+          "level": {
+            "$eq": "error"
+          }
         },
-        "nReturned": 33,
+        "nReturned": 180,
         "executionTimeMillisEstimate": 0,
         "works": 1201,
-        "advanced": 33,
-        "needTime": 1167,
+        "advanced": 180,
+        "needTime": 1020,
         "needYield": 0,
         "saveState": 0,
         "restoreState": 0,
@@ -131,19 +91,16 @@
       }
     }
   },
-  "queryShapeHash": "AA9EF5115100C33D93A9AC548254C9638550F4CE3DB41D1D61E56D93F433CF4D",
+  "queryShapeHash": "2100E58A0FCF01AAA88CFE6C60227FCAC9C3ABEC8C84044E87087F74827090E7",
   "command": {
     "find": "events",
     "filter": {
-      "service": "payments",
-      "level": "error",
-      "duration_ms": {
-        "$gt": 500
-      }
+      "level": "error"
     },
     "sort": {
-      "ts": -1
+      "duration_ms": -1
     },
+    "limit": 10,
     "$db": "logs"
   },
   "serverInfo": {
